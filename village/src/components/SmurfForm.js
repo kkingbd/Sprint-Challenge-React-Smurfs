@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+const NavBar = styled.div` 
 
+  margin: 15px;
+  padding: 10px;
+  
+  .SmurfForm{
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+  justify-content:flex-end;
+  }
+  .button{
+    width: 30%;
+    margin-top: 30px;
+  }
+`;
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +58,7 @@ class SmurfForm extends Component {
 
   render() {
     return (
+      <NavBar>
       <div className="SmurfForm">
         <form onSubmit={this.addSmurf}>
           <input
@@ -62,9 +79,10 @@ class SmurfForm extends Component {
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <button className='button' type="submit">Add to the village</button>
         </form>
       </div>
+      </NavBar>
     );
   }
 }
