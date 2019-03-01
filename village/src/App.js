@@ -51,23 +51,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav/>
-        <Route exact path='/' render= { props=> (
-            <Smurfs 
-                smurfs={this.state.smurfs} 
-                deleteSmurf ={this.state.smurf}
-            />
-          )}
-        />
-        <Route path="/update-form/:id" render={props => (
+        <Nav />
+        <Route path="/smurf-form" render={props => (
             <SmurfForm 
-              {...props}
-              deleteSmurf ={this.deleteSmurf}
-              updateSmurf={this.updateSmurf}  
+              {...props} 
               createSmurf ={this.createSmurf}
              />
           )}  
         />
+        <Route exact path='/' render= { props=> (
+            <Smurfs 
+                
+                smurfs={this.state.smurfs} 
+                deleteSmurf ={this.state.smurf}
+                
+            />
+          )}
+        />
+        
       </div>
     );
   }
