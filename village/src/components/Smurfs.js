@@ -4,7 +4,7 @@ import Smurf from './Smurf';
 
 class Smurfs extends Component {
   render() {
-    return (
+    return ( 
       <div className="Smurfs">
         <h1>Smurf Village</h1>
         <ul>
